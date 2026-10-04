@@ -1,0 +1,133 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Website</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- 🎵 BACKGROUND MUSIC -->
+    <!-- ============================= -->
+
+    <audio id="backgroundMusic" loop>
+
+     
+        <source src="/music/humraah_malang (1).mp3" type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- ============================= -->
+    <!-- WEBSITE CONTENT -->
+    <!-- ============================= -->
+
+    <header>
+        <h1>Welcome to My Website ✨</h1>
+
+        <p>
+            This website has background music 🎵
+        </p>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <h2>My Beautiful Website</h2>
+
+            <p>
+                Enjoy exploring the website with some music
+                playing in the background.
+            </p>
+
+        </section>
+
+
+        <section class="content">
+
+            <h2>About</h2>
+
+            <p>
+                Welcome to my website. You can add your own
+                favourite music to this website.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- 🎵 MUSIC JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script>
+
+        const music = document.getElementById("backgroundMusic");
+
+
+        // Try to start music automatically
+        music.play().catch(() => {
+
+            /*
+                Some browsers block autoplay.
+
+                If that happens, music will start
+                when the visitor first clicks/taps
+                anywhere on the website.
+            */
+
+            const startMusic = () => {
+
+                music.play();
+
+                document.removeEventListener(
+                    "click",
+                    startMusic
+                );
+
+                document.removeEventListener(
+                    "touchstart",
+                    startMusic
+                );
+
+                document.removeEventListener(
+                    "keydown",
+                    startMusic
+                );
+
+            };
+
+
+            document.addEventListener(
+                "click",
+                startMusic
+            );
+
+            document.addEventListener(
+                "touchstart",
+                startMusic
+            );
+
+            document.addEventListener(
+                "keydown",
+                startMusic
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
